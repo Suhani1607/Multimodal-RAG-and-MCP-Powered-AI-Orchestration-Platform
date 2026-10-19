@@ -66,10 +66,7 @@ def chunk_text(
     pages: list[dict[str, Any]],
     chunk_size: int = 800,
     chunk_overlap: int = 150,
-) -> list[dict[str, object]]:
-    """
-    Chunk each page separately and preserve its source page number.
-    """
+) -> list[dict[str, Any]]:
     if chunk_size <= 0:
         raise ValueError("Chunk size must be greater than zero.")
 
@@ -78,7 +75,7 @@ def chunk_text(
             "Chunk overlap must be non-negative and smaller than chunk size."
         )
 
-    chunks: list[dict[str, object]] = []
+    chunks: list[dict[str, Any]] = []
     chunk_id = 1
     step = chunk_size - chunk_overlap
 
@@ -94,8 +91,10 @@ def chunk_text(
         while start < len(text):
             end = min(start + chunk_size, len(text))
 
+            # Prefer a nearby word boundary.
             if end < len(text):
                 boundary = text.rfind(" ", start, end)
+
                 if boundary > start + chunk_size // 2:
                     end = boundary
 
