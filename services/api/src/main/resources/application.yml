@@ -1,0 +1,30 @@
+server:
+  port: 4000
+
+spring:
+  application:
+    name: multimodal-rag-mcp-orchestrator
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5433/rag_mcp}
+    username: ${DATABASE_USERNAME:app}
+    password: ${DATABASE_PASSWORD:app_password}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+  servlet:
+    multipart:
+      max-file-size: 25MB
+      max-request-size: 26MB
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+app:
+  storage:
+    directory: storage/documents

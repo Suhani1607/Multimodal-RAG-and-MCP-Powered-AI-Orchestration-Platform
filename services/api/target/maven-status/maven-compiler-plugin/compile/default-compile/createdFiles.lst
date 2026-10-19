@@ -1,0 +1,11 @@
+com\multimodalrag\api\documents\DocumentEntity.class
+com\multimodalrag\api\documents\DocumentService.class
+com\multimodalrag\api\documents\DocumentRepository.class
+com\multimodalrag\api\documents\DocumentController.class
+com\multimodalrag\api\documents\DocumentStorageService.class
+com\multimodalrag\api\health\HealthController.class
+com\multimodalrag\api\documents\DocumentController$DocumentResponse.class
+com\multimodalrag\api\documents\DocumentExceptionHandler.class
+com\multimodalrag\api\documents\DocumentStatus.class
+com\multimodalrag\api\OrchestratorApiApplication.class
+com\multimodalrag\api\documents\DocumentExceptionHandler$ErrorResponse.class
